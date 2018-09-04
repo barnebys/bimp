@@ -1,0 +1,22 @@
+{
+  "name": "picntuck",
+  "version": "1.0.0",
+  "description": "Image processing as a service",
+  "main": "index.js",
+  "author": "johan@baboons.se",
+  "license": "MIT",
+  "scripts": {
+    "start": "micro",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "decodeurl": "0.0.8",
+    "encodeurl": "^1.0.2",
+    "is-url": "^1.2.4",
+    "md5": "^2.2.1",
+    "micro": "^9.3.3",
+    "now-env": "^3.1.0",
+    "request": "^2.88.0",
+    "sharp": "^0.20.7"
+  }
+}
