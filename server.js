@@ -11,7 +11,7 @@ const {
   resize,
   extract,
   padding,
-  compress,
+  format,
   background
 } = require("./lib/transformers");
 const { proxy } = require("./lib/providers");
@@ -31,7 +31,7 @@ module.exports = createMicroHandle(
     padding("pad"),
     resize("w", "h"),
     background("bg"),
-    compress()
+    format("format")
   ]),
   {
     onError: async (req, res, err) => {
