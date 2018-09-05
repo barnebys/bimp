@@ -1,9 +1,8 @@
 {
-  "name": "picntuck",
+  "name": "bimp",
   "version": "1.0.0",
-  "description": "Image processing as a service",
-  "main": "index.js",
-  "author": "johan@baboons.se",
+  "description": "Barnebys Image Processor",
+  "main": "server.js",
   "license": "MIT",
   "scripts": {
     "start": "micro",

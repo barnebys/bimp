@@ -1,0 +1,10 @@
+{
+  "type": "docker",
+  "features": {
+    "cloud": "v2"
+  },
+  "env": [
+    "SECRET",
+    "NOT_FOUND_IMAGE_URL"
+  ]
+}
