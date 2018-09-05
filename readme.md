@@ -42,6 +42,7 @@ $ now barnebys/bimp -e SECRET=MySecret -e NOT_FOUND_IMAGE_URL=https://someurl.co
 | `trim`  | Trim "boring" pixels from all edges   |
 | `pad`  | Add padding   |
 | `bg`  | Add a color to replace alpha or padded area  |
+| `format`  | Set output format  |
 | `s`  | Signed hash  |
 
 ### Resizing
@@ -88,8 +89,12 @@ Replace alpha channel, or padded area, with a color.
 
 `bg=ffffff`
 
-`bg=000000f1`  
 
+### Format
+
+Currently only supports `compress`which enables a higher compression.   
+
+`format=compress`
 
 # Clients
 
