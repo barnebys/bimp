@@ -11,6 +11,7 @@
   "dependencies": {
     "decodeurl": "0.0.8",
     "encodeurl": "^1.0.2",
+    "file-type": "^9.0.0",
     "is-url": "^1.2.4",
     "md5": "^2.2.1",
     "micro": "^9.3.3",
