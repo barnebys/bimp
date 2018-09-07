@@ -18,12 +18,17 @@ To deploy this, run the following command.
 $ now barnebys/bimp
 ``` 
 
-Enter a secret and a no image url. Leave the env empty to disable signed url's and/or a no image url. 
+Enter a `SECRET` and a `DEFAULT_IMAGE_URL`. Leave the env empty to disable signed url's and/or a no image url. 
+To enable S3 pass along the following env's `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`, `S3_BUCKET`, `S3_PREFIX`  
 
 To specify the env upon deployment add the `-e` flag
 ```
-$ now barnebys/bimp -e SECRET=MySecret -e NOT_FOUND_IMAGE_URL=https://someurl.com/image.jpg
+$ now barnebys/bimp -e SECRET=MySecret -e DEFAULT_IMAGE_URL=https://someurl.com/image.jpg
 ``` 
+
+__note: to set empty env's pass the env's with empty string e.g. `-e SECRET=""`__
+
+
 
 ## How to use
 
@@ -104,4 +109,4 @@ Currently only supports `compress`which enables a higher compression.
 # Roadmap
 
 * More sharp features
-* Add S3 
+* More providers

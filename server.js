@@ -1,5 +1,5 @@
 require("now-env");
-const { NOT_FOUND_IMAGE_URL } = process.env;
+const { DEFAULT_IMAGE_URL } = process.env;
 const isUrl = require("is-url");
 const sharp = require("sharp");
 const { send } = require("micro");
@@ -14,14 +14,14 @@ const {
   format,
   background
 } = require("./lib/transformers");
-const { proxy } = require("./lib/providers");
+const { s3, proxy } = require("./lib/providers");
 
 module.exports = createMicroHandle(
   path => {
     if (isUrl(path)) {
       return proxy(path);
     } else {
-      return Promise.reject("Not implemented");
+      return s3(path);
     }
   },
   combineTransformers([
@@ -35,12 +35,12 @@ module.exports = createMicroHandle(
   ]),
   {
     onError: async (req, res, err) => {
-      if (NOT_FOUND_IMAGE_URL) {
-        const { contentType, file } = await proxy(NOT_FOUND_IMAGE_URL);
+      if (DEFAULT_IMAGE_URL) {
+        const { contentType, file } = await proxy(DEFAULT_IMAGE_URL);
         const image = sharp(file);
         return sendImage(req, res, image, {
           "Content-Type": contentType,
-          "Cache-Control": "public, max-age=" + 60
+          "Cache-Control": "public, max-age=300"
         });
       } else {
         console.log(err);
