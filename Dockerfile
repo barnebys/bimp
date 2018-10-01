@@ -4,8 +4,8 @@ RUN apk add --update \
     vips-dev \
     fftw-dev \
     gcc g++ make libc6-compat \
-    --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ \
-    --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ \
+    --repository http://dl-cdn.alpinelinux.org/alpine/v3.8/main/ \
+    --repository http://dl-cdn.alpinelinux.org/alpine/v3.8/community/ \
     --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ \
   && rm -rf /var/cache/apk/*
 WORKDIR /usr/src
@@ -16,8 +16,8 @@ COPY . .
 FROM mhart/alpine-node:10
 RUN apk add --update \
     vips-dev \
-    --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ \
-    --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ \
+    --repository http://dl-cdn.alpinelinux.org/alpine/v3.8/main/ \
+    --repository http://dl-cdn.alpinelinux.org/alpine/v3.8/community/ \
     --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/ \
   && rm -rf /var/cache/apk/*
 WORKDIR /usr/src
