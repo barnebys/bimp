@@ -1,9 +1,0 @@
-{
-  "SECRET": "",
-  "WHITELIST":  "https://ostfrallan.cdn.prismic.io",
-  "DEFAULT_IMAGE_URL": "https://d1e2j7xcnt57hx.cloudfront.net/com/img/20180621104719/layout/lot_no_image_default.png",
-  "S3_ACCESS_KEY_ID": "@s3_access_key_id",
-  "S3_SECRET_ACCESS_KEY": "@s3_secret_access_key",
-  "S3_BUCKET": "pricebank-images",
-  "S3_PREFIX": ""
-}

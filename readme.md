@@ -6,6 +6,14 @@ Image processing service based on [Sharp](https://github.com/lovell/sharp) and [
 
 ```
 $ yarn install
+$ now env 
+``` 
+
+or
+
+
+```
+$ yarn install
 $ yarn run start
 ``` 
 
@@ -18,17 +26,61 @@ To deploy this, run the following command.
 $ now barnebys/bimp
 ``` 
 
-Enter a `SECRET` (or a `WHITELIST` domain prefix) and a `DEFAULT_IMAGE_URL`. Leave the env empty to disable signed url's and/or a no image url. 
-To enable S3 pass along the following env's `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`, `S3_BUCKET`, `S3_PREFIX`  
+## Providers
 
-To specify the env upon deployment add the `-e` flag
+Available providers to be used a source.
+
+### Proxy
+
+When using a valid URL Bimp will function as a proxy and download the image. 
+
+### S3
+
+Add the following environment variables to enable support for S3.
+
+`S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`, `S3_BUCKET`, `S3_PREFIX`
+
+`$ now barnebys/bimp -e S3_ACCESS_KEY_ID=XXXX -e S3_SECRET_ACCESS_KEY=xxxx -e S3_BUCKET=bucket -e S3_PREFIX=myPrefix`
+
+### Azure
+
+Experimental support. More information to shortly.
+
+### GCS
+
+Experimental support. More information to shortly.
+
+## Security
+
+### Hashed URLs
+
+Securing URLs adds a layer of security to your images, by preventing anyone from altering the URLs. 
+Add the environment variable `SECRET` to your build which will be used to sign all URLs.
+
+`$ now barnebys/bimp -e SECRET=MySecret`
+
+### Whitelisting for Proxy
+
+Sometimes you would want to generate URLs on client side and still allow for some security. 
+Where a secret would fill no function as it would exposed publicly. There for we allow the possibility to whitelist domains
+when using the proxy provider.
+
+The whitelist can be any valid regular expression.
+
+`$ now barnebys/bimp -e WHITELIST=barnebys.com`
+   
+
 ```
 $ now barnebys/bimp -e SECRET=MySecret -e DEFAULT_IMAGE_URL=https://someurl.com/image.jpg
 ``` 
 
-__note: to set empty env's pass the env's with empty string e.g. `-e SECRET=""`__
+## Default Image
 
+If the image is missing you can set a default image to be used by adding the environment variable `DEFAULT_IMAGE_URL` on deployment.
 
+```
+$ now barnebys/bimp -e DEFAULT_IMAGE_URL=https://someurl.com/image.jpg
+``` 
 
 ## How to use
 
@@ -97,7 +149,7 @@ Replace alpha channel, or padded area, with a color.
 
 ### Format
 
-Currently only supports `compress`which enables a higher compression.   
+Currently only supports `compress` which enables a higher compression.   
 
 `format=compress`
 
@@ -108,5 +160,6 @@ Currently only supports `compress`which enables a higher compression.
 
 # Roadmap
 
+* Tiny images
 * More sharp features
 * More providers
