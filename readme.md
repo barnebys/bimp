@@ -18,7 +18,7 @@ To deploy this, run the following command.
 $ now barnebys/bimp
 ``` 
 
-Enter a `SECRET` and a `DEFAULT_IMAGE_URL`. Leave the env empty to disable signed url's and/or a no image url. 
+Enter a `SECRET` (or a `WHITELIST` domain prefix) and a `DEFAULT_IMAGE_URL`. Leave the env empty to disable signed url's and/or a no image url. 
 To enable S3 pass along the following env's `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`, `S3_BUCKET`, `S3_PREFIX`  
 
 To specify the env upon deployment add the `-e` flag

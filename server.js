@@ -14,7 +14,7 @@ const {
   format,
   background
 } = require("./lib/transformers");
-const { s3, proxy } = require("./lib/providers");
+const { s3, gcs, azure, proxy } = require("./lib/providers");
 
 module.exports = createMicroHandle(
   path => {
