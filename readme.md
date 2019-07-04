@@ -67,11 +67,11 @@ when using the proxy provider.
 
 The whitelist can be any valid regular expression.
 
-`$ now barnebys/bimp -e WHITELIST=barnebys.com`
+`$ now bimp -e WHITELIST=barnebys.com`
    
 
 ```
-$ now barnebys/bimp -e SECRET=MySecret -e DEFAULT_IMAGE_URL=https://someurl.com/image.jpg
+$ now bimp -e SECRET=MySecret -e DEFAULT_IMAGE_URL=https://someurl.com/image.jpg
 ``` 
 
 ## Default Image
@@ -79,7 +79,7 @@ $ now barnebys/bimp -e SECRET=MySecret -e DEFAULT_IMAGE_URL=https://someurl.com/
 If the image is missing you can set a default image to be used by adding the environment variable `DEFAULT_IMAGE_URL` on deployment.
 
 ```
-$ now barnebys/bimp -e DEFAULT_IMAGE_URL=https://someurl.com/image.jpg
+$ now bimp -e DEFAULT_IMAGE_URL=https://someurl.com/image.jpg
 ``` 
 
 ## How to use

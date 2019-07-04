@@ -1,4 +1,3 @@
-require("now-env");
 const { DEFAULT_IMAGE_URL } = process.env;
 const isUrl = require("is-url");
 const sharp = require("sharp");
