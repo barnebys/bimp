@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [{
     "src": "server.js",
-    "use": "@now/node@0.5.1",
+    "use": "@now/node@canary",
     "config": { "maxLambdaSize": "25mb"}
   }],
   "routes": [
